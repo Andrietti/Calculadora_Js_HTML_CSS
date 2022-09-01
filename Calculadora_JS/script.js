@@ -1,7 +1,9 @@
 function insert(num) {
 
     let numero = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numero + num
+    if (document.getElementById('resultado').innerHTML.length <= 15) {
+        document.getElementById('resultado').innerHTML = numero + num
+    }
 
 }
 
@@ -17,7 +19,7 @@ function back() {
 
 function calcular() {
     let resultado = document.getElementById('resultado').innerHTML;
-    if (resultado) {
+    if (resultado && resultado.length <= 15) {
         document.getElementById('resultado').innerHTML = eval(resultado)
     }
 
